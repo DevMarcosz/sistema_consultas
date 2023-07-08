@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+html, body, #home{
+    height: 100%;
+}
+
+
+body {
+    background:             
+                url(../imagens/6731.jpg),
+                linear-gradient(50deg, #ffd196, #7c26f8);
+    background-attachment: fixed;
+}
+
+nav.navbar-transparente{
+    padding: 15px 0px;
+    background: rgba(0,0,0,0.6);
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #9bf0e1;
+}
+
+.navbar-light .navbar-toggler{
+    color: rgba(255,255,255,.5);
+    border-color: white;
+}
+
+.capa{
+    text-align: center;
+}
+#home {
+    background: rgba(0,0,0,0.6);
+}
+h1 {
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: white;
+}
+.btn{
+    border-color: rgba(173, 216, 230, 1);
+    color: white;
+}
+
+.btn:hover{
+    background-color:white;
+    color: black;
+}
+
+#consulta {
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    background-color: #eee;
+    padding: 20px;
+}
+.form{
+    padding: 20px;
+    
+}
+
+.form-group {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    border: 2px solid #f0f0f0;
+    display: block;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+}
+
+.form-group i {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.form-group small {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form button {
+    background-color: #9bf0e1;
+    border: 2px solid #7c26f8;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.form-group.success input {
+    border-color: #2ecc71;
+}
+.form-group.error input {
+    border-color: #e74c3c;
+}
+
+.form-group.form-group.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-group.form-group.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-group.error small {
+    visibility: visible;
+    color: #e74c3c;
+}
