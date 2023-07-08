@@ -2,6 +2,7 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const data = document.getElementById('data');
+var espec;
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -41,7 +42,9 @@ function checkInputs() {
   });
 
   if (formIsValid) {
-    const content = `Nome: ${usernameValue}\nEmail: ${emailValue}\nData da Consulta: ${dataValue}`;
+    
+    mostrarLoading();
+    const content = `Nome: ${usernameValue}\nEmail: ${emailValue}\nData da Consulta: ${dataValue}\nEspecialização: ${espec}`
     downloadFile(content, 'comprovante_consulta.txt');
   }
 }
@@ -71,7 +74,7 @@ function checkEmail(email) {
 function checkValidDate(date) {
   const selectedDate = new Date(date);
   const currentDate = new Date();
-  currentDate.setHours(0, 0, 0, 0); // Define a hora atual como 00:00:00
+  currentDate.setHours(0, 0, 0, 0);
 
   return selectedDate >= currentDate;
 }
@@ -83,3 +86,30 @@ function downloadFile(content, filename) {
   element.download = filename;
   element.click();
 }
+
+function mostrarLoading() {
+  var botao = document.getElementById("meuBotao");
+  botao.classList.add("loading");
+
+  setTimeout(function() {
+    botao.classList.remove("loading");
+  }, 3000); 
+}
+
+
+var cards = document.querySelectorAll('.card');
+
+// Adiciona um evento de clique a cada card
+cards.forEach(function(card) {
+  card.addEventListener('click', function() {
+    // Remove a classe "selected" de todos os cards
+    cards.forEach(function(card) {
+      card.classList.remove('selected');
+    });
+   
+     espec = card.getAttribute('data-especializacao');
+
+    // Adiciona a classe "selected" ao card clicado
+    card.classList.add('selected');
+  });
+});
